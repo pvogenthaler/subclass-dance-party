@@ -3,7 +3,16 @@ $(document).ready(function() {
 
   $('.addDancerButton').on('click', function(event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    if(dancerMakerFunctionName === "lineUp") {
+      window.dancers.forEach(function(item) {
+
+        var dancer = item[0];
+        dancer["align"] = "right";
+      });
+    }
+    else {
     var dancerMakerFunction = window[dancerMakerFunctionName];
+    console.log(dancerMakerFunction);
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -12,6 +21,14 @@ $(document).ready(function() {
     dancer.setPosition();
     dancer.step();
     $('body').append(dancer.$node);
+    window.dancers.push(dancer.$node);
+  }
+  });
+
+  $('img').mouseover('click', function(event) {
+      console.log($(this));
+      alert("hovering");
+
   });
 
   // $('.middleDancerButton').on('click', function(event) {

@@ -1,7 +1,7 @@
 var makeMiddleDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.left = 500;
-  this.top = 500;
+  this.top = 5000;
   this.$node = $('<div align="center"><img class="puppy" height="200" width = "250" src="images/impossibly-cute-puppy-15.jpg"></img></div>');
 
 };
