@@ -19,7 +19,7 @@ $(document).ready(function() {
     //console.log($this);
     var dancerMakerFunction = window[dancerMakerFunctionName];
     var dancer = new makeMiddleDancer(
-      $("body").height() * 1000,
+      $("body").height() * 2000,
       $("body").width() * 1000,
       Math.random() * 1000
     );
@@ -35,7 +35,7 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
     var dancer = new makeVerticalDancer (
       $("body").height() * 1000,
-      $("body").width() * 1000,
+      $("body").width() * 10000,
       Math.random() * 1000
     );
     dancer.setPosition();
