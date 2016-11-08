@@ -2,7 +2,7 @@ var makeVerticalDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.left = 500;
   this.top = 200;
-  this.$node = $('<img class="puppy" height="200" width = "200" src="images/JG.jpg"></img><br>');
+  this.$node = $('<div align="right"><img class="puppy" height="200" width = "200" src="images/JG.jpg"></img></div>');
 
 };
 
@@ -19,7 +19,7 @@ makeVerticalDancer.prototype.step = function () {
 makeVerticalDancer.prototype.setPosition = function() { 
   var styleSettings = {
     top: this.top,
-    left: this.left
+    left: this.left,
   };
   this.$node.css(styleSettings);
 };
