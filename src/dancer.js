@@ -6,13 +6,17 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() { 
-  setTimeout(this.step, this.timeBetweenSteps);
+  setTimeout(function() {
+    this.step(); 
+  }, this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
+  console.log(top, left);
+ 
   var styleSettings = {
-    top: top,
-    left: left
+    top: this.top,
+    left: this.left
   };
   makeDancer.$node.css(styleSettings);
 };
