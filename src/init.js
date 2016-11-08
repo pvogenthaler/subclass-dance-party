@@ -16,16 +16,34 @@ $(document).ready(function() {
 
   $('.middleDancerButton').on('click', function(event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    //console.log($this);
     var dancerMakerFunction = window[dancerMakerFunctionName];
     var dancer = new makeMiddleDancer(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $("body").height() * 1000,
+      $("body").width() * 1000,
       Math.random() * 1000
     );
-    console.log(dancer);
+    dancer.setPosition();
+    dancer.step();
+    $('body').append(dancer.$node);
+  });
+
+
+  $('.makeVerticalDancer').on('click', function(event) {
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    //console.log($this);
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    var dancer = new makeVerticalDancer (
+      $("body").height() * 1000,
+      $("body").width() * 1000,
+      Math.random() * 1000
+    );
     dancer.setPosition();
     dancer.step();
     $('body').append(dancer.$node);
   });
 });
+
+
+
 
