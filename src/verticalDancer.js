@@ -1,6 +1,9 @@
 var makeVerticalDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.left = 500;
+  this.top = 200;
+  this.$node = $('<img class="puppy" height="200" width = "200" src="images/JG.jpg"></img><br>');
+
 };
 
 makeVerticalDancer.prototype = Object.create(makeDancer.prototype);

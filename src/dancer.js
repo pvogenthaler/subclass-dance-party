@@ -2,8 +2,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
-  this.$node = $('<span class="dancer"></span>');
-
+  this.$node = $('<img class="polarBear" height="50" width = "50" src="images/cute-polar-bear.jpg"></img><br>');
 
 };
 
