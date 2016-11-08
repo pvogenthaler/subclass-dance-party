@@ -18,16 +18,11 @@ describe('middleDancer', function() {
     expect(middleDancer.$node.toggle.called).to.be.true;
   });
 
-  describe('dance', function() {
-    it('should call step at least once per second', function() {
-      sinon.spy(middleDancer, 'step');
-      expect(middleDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps);
+  describe('test middle dancer', function() {
+    it('should have a location set properly', function() {
+      var height = $("body").height() / 2;
+      expect(middleDancer.top).to.be.equal(height);
 
-      expect(middleDancer.step.callCount).to.be.equal(1);
-
-      clock.tick(timeBetweenSteps);
-      expect(middleDancer.step.callCount).to.be.equal(2);
     });
   });
 

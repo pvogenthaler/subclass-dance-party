@@ -18,16 +18,11 @@ describe('verticalDancer', function() {
     expect(verticalDancer.$node.toggle.called).to.be.true;
   });
 
-  describe('dance', function() {
-    it('should call step at least once per second', function() {
-      sinon.spy(verticalDancer, 'step');
-      expect(verticalDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps);
+  describe('vertical dance location', function() {
+    it('should have location set to middle of page', function() {
+      var location = $('body').width() / 2;
+      expect(verticalDancer.left).to.be.equal(location);
 
-      expect(verticalDancer.step.callCount).to.be.equal(1);
-
-      clock.tick(timeBetweenSteps);
-      expect(verticalDancer.step.callCount).to.be.equal(2);
     });
   });
 
